@@ -18,7 +18,7 @@ public class TcIteration {
 	@OneToMany(mappedBy = "tcIteration")
     private List<TestCase> testCases;
 	
-	public TcIteration() {}
+	protected TcIteration() {}
 	
 	public TcIteration(String name, Product product) {
 		this.name = name;

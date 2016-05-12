@@ -15,7 +15,7 @@ public class Product {
 	 @OneToMany(mappedBy = "product")
 	 private List<TcIteration> tcIterations;
 	 
-	 Product() {}
+	 protected Product() {}
 	 
 	 public Product(String name) {
 		 this.name = name;
