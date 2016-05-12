@@ -13,4 +13,6 @@ public class TestCase {
 	 
 	@ManyToOne
 	private TcIteration tcIteration;
+	
+	public TestCase() {}
 }
