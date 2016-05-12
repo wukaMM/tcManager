@@ -27,16 +27,11 @@ public class ProductController {
     public Map<String, Object> addProduct(@RequestParam String name) {
 		Map<String, Object> response = new LinkedHashMap<>();
 		
-        Product pro = productService.findProByName(name);
-        if (pro != null) {
-        	response.put("productname", "existed");
-        	return response;
-        }
-		
         productService.addProduct(name);
         
         response.put("productname", name);
         logger.info("add product success !!!!!");
+        
         return response;
     }
 

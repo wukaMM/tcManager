@@ -7,7 +7,7 @@ import com.my.test.tcManager.model.Product;
 
 @Repository
 public interface ProductRepository extends CrudRepository<Product, Long> {
-	Product findProById(String pId);
+	Product findById(String pId);
 	
-	Product findProByName(String name);
+	Product findByName(String name);
 }

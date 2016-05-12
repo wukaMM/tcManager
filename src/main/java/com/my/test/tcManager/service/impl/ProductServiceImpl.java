@@ -12,21 +12,15 @@ public class ProductServiceImpl implements ProductService {
 	
 	@Autowired 
 	private ProductRepository productRepository;
-	
-	@Override
-	public Product findProById(String pId) {
-		Product product = productRepository.findProById(pId);
-		return product;
-	}
-	
-	@Override
-	public Product findProByName(String name) {
-		Product product = productRepository.findProByName(name);
-		return product;
-	}
-	
+
 	public void addProduct(String name) {
-		Product product = new Product(name);
-		productRepository.save(product);
+		
+		Product pro = productRepository.findByName(name);
+        if (pro == null) {
+        	Product product = new Product(name);
+    		productRepository.save(product);
+        }
+		
 	}
+
 }
