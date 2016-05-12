@@ -11,5 +11,14 @@ public class Product {
 	 private Long id;
 	 
 	 private String name;
-
+	 
+	 @OneToMany(mappedBy = "product")
+	 private List<TcIteration> tcIterations;
+	 
+	 Product() {}
+	 
+	 public Product(String name) {
+		 this.name = name;
+	 }
+	 
 }
