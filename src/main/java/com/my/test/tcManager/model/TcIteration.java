@@ -25,4 +25,16 @@ public class TcIteration {
 		this.product = product;
 	}
 	
+	public void setProduct(Product p) {
+		this.product = p;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
+	<title>Test Case Manager</title>
+	<link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.1/css/bootstrap.min.css"
+		th:href="@{/webjars/bootstrap/3.3.1/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+  
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-tasks"></span>Test Case Manager</a>
+    </div>
+  
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">添加用户</a></li>
+        <li class="dropdown"> 
+         <a class="dropdown-toggle" data-toggle="dropdown" href="#">sun jiahui<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">退出</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+    </div>
+</nav>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+</body>
+</html>
