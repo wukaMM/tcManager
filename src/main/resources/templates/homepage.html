@@ -6,9 +6,50 @@
 	<title>Test Case Manager</title>
 	<link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.1/css/bootstrap.min.css"
 		th:href="@{/webjars/bootstrap/3.3.1/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+	<link href="css/tcmg.css" th:href="@{css/tcmg.css}" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
+	<!-- Large modal -->
+	<div id="addUser" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      <h1>添加用户</h1>
+	      <form class="form-horizontal" action="#" th:action="@{/users}" method="post">
+		
+		  <div class="form-group">
+		    <label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
+		    <div class="col-sm-9">
+		      <input type="text" class="form-control" id="inputEmail3" placeholder="用户名" />
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+		    <div class="col-sm-9">
+		      <input type="password" class="form-control" id="inputPassword3" placeholder="密码" />
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="inputPassword3" class="col-sm-2 control-label">确认密码</label>
+		    <div class="col-sm-9">
+		      <input type="password" class="form-control" id="inputPassword3" placeholder="确认密码" />
+		    </div>
+		  </div>
+
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-8">
+		      <button class="btn btn-info btn-lg btn-block" onclick="hi()">确定添加</button>
+		    </div>
+		  </div>
+		  
+		</form>
+	
+	    </div>
+	  </div>
+	</div>
+	
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	  
@@ -17,7 +58,7 @@
 	    </div>
 	  
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#">添加用户</a></li>
+	        <li><a href="#" data-toggle="modal" data-target="#addUser">添加用户</a></li>
 	        <li class="dropdown"> 
 	         <a class="dropdown-toggle" data-toggle="dropdown" href="#">sun jiahui<b class="caret"></b></a>
 	          <ul class="dropdown-menu">
@@ -28,6 +69,8 @@
 	    </div>
 	</nav>
 </body>
+
+<script src="/js/add_user.js" th:src="@{js/add_user.js}"></script>
 
 <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.1/jquery.min.js" th:src="@{/webjars/jquery/2.1.1/jquery.min.js}"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/3.3.1/js/bootstrap.min.js}"></script>
