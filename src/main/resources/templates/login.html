@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
+	<title>Test Case Manager</title>
+	<link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.1/css/bootstrap.min.css"
+		th:href="@{/webjars/bootstrap/3.3.1/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+	<link href="css/tcmg.css" th:href="@{css/tcmg.css}" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+	<div class="col-sm-4 col-sm-offset-4" id="loginform">
+		<h1>Test Case Manager</h1>
+		<form class="form-horizontal" th:action="@{/login}" th:object="${person}" method="post">
+		
+		  <div class="form-group">
+		    <label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control" id="inputEmail3" placeholder="用户名" th:field="*{username}" />
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+		    <div class="col-sm-10">
+		      <input type="password" class="form-control" id="inputPassword3" placeholder="密码" th:field="*{password}" />
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <div class="checkbox">
+		        <label>
+		          <input type="checkbox" />记住我
+		        </label>
+		      </div>
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <button type="submit" class="btn btn-info btn-lg btn-block">登录</button>
+		    </div>
+		  </div>
+		  
+		</form>
+	</div>
+	
+</body>
+
+<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.1/jquery.min.js" th:src="@{/webjars/jquery/2.1.1/jquery.min.js}"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/3.3.1/js/bootstrap.min.js}"></script>
+</html>
