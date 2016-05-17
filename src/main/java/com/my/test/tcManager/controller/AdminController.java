@@ -22,7 +22,6 @@ public class AdminController {
 	
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public String loginPage(Person person, Model model) {
-//		model.addAttribute("username", "dddddd");
 		return "login";
 	}
 	
@@ -31,16 +30,24 @@ public class AdminController {
 		
 		boolean verifyRes = personService.verifyUser(person.getUsername(), person.getPassword());
 		if (verifyRes == true) {
+			 model.addAttribute("person", new Person());
 			return "homepage";
 		} else {
 			return "login";
 		}
 	}
 	
-	@RequestMapping(value="/users", method=RequestMethod.POST)
-	public void addUser(Person person, @ModelAttribute String username, @ModelAttribute String password) {
+	@RequestMapping(value="/users", method=RequestMethod.GET)
+	public String addUserPage(Person person, Model model) {
+		model.addAttribute("person", new Person());
+		return "user";
 		
-		logger.info("sfasdfafsdfasf");
+	}
+	
+	@RequestMapping(value="/users", method=RequestMethod.POST)
+	public void addUser(Person person, Model model) {
+		
+		personService.addUser(person.getUsername(), person.getPassword());
 		
 	}
 	

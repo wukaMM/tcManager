@@ -4,4 +4,6 @@ public interface PersonService {
 	
 	public boolean verifyUser(String username, String password);
 	
+	public void addUser(String username, String password);
+	
 }

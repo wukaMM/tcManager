@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
+	<title>Test Case Manager</title>
+	<link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.1/css/bootstrap.min.css"
+		th:href="@{/webjars/bootstrap/3.3.1/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+	<link href="css/tcmg.css" th:href="@{css/tcmg.css}" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+	      <form name="addUserForm" class="form-horizontal" action="#" th:action="@{/homepage}" method="post" th:object="${person}">
+		
+		  <div class="form-group">
+		    <label for="inputEmail3" class="col-sm-2 control-label">用户名</label>
+		    <div class="col-sm-9">
+		      <input type="text" class="form-control" id="inputEmail3" placeholder="用户名" th:field="*{username}"/>
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+		    <div class="col-sm-9">
+		      <input type="password" class="form-control" id="inputPassword3" placeholder="密码" th:field="*{password}" name="password"/>
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label for="inputPassword3" class="col-sm-2 control-label">确认密码</label>
+		    <div class="col-sm-9">
+		      <input type="password" class="form-control" id="inputPassword3" placeholder="确认密码" name="conPassword"/>
+		    </div>
+		  </div>
+
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-8">
+		      <button class="btn btn-info btn-lg btn-block" onclick="checkPassword()">确定添加</button>
+		    </div>
+		  </div>
+		  
+		</form>
+
+	
+</body>
+
+<script src="/js/add_user.js" th:src="@{js/add_user.js}"></script>
+
+<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.1/jquery.min.js" th:src="@{/webjars/jquery/2.1.1/jquery.min.js}"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/3.3.1/js/bootstrap.min.js}"></script>
+</html>

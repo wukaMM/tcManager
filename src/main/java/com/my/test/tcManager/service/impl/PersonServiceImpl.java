@@ -28,4 +28,15 @@ public class PersonServiceImpl implements PersonService {
 			return false;
 		}
 	}
+	
+	public void addUser(String username, String password) {
+		
+		Person p = personRepository.findByUsername(username);
+		//用户不存在
+		if (p == null) {
+			Person person = new Person(username, password);
+			personRepository.save(person);
+		}
+		
+	}
 }
